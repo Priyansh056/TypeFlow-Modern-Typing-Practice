@@ -1,0 +1,123 @@
+body {
+    background-color: #3498db;
+    color: #2c3e50;
+    font-family: 'Verdana', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    max-width: 90%;
+    text-align: center;
+}
+
+h1 {
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.stat-item {
+    flex-basis: 25%;
+}
+
+.label {
+    font-size: 14px;
+    color: #7f8c8d;
+    text-transform: uppercase;
+}
+
+.value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.quote-display {
+    margin-bottom: 20px;
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    border: 1px solid #bdc3c7;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.quote-input {
+    width: 100%;
+    height: 150px;
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    padding: 20px;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    resize: none;
+    font-family: inherit;
+    box-sizing: border-box; /* Important */
+    
+    /* Make the textarea invisible but still focusable */
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+}
+
+.quote-input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+#restart-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#restart-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Character styling */
+.quote-display span {
+    transition: all 0.1s ease;
+}
+
+.correct {
+    color: #27ae60;
+}
+
+.incorrect {
+    color: #c0392b;
+    background-color: #fbeaea;
+    text-decoration: underline;
+}
+
+/* Blinking cursor effect on the current character */
+.current {
+    background-color: #e0e0e0;
+    border-radius: 2px;
+}
