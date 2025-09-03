@@ -4,7 +4,6 @@ const timerElement = document.getElementById("timer");
 const wpmElement = document.getElementById("wpm");
 const cpmElement = document.getElementById("cpm");
 const accuracyElement = document.getElementById("accuracy");
-
 const restartBtn = document.getElementById("restart-btn");
 const pauseBtn = document.getElementById("pause-btn");
 const darkModeBtn = document.getElementById("darkmode-btn");
