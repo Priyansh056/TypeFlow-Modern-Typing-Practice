@@ -1,4 +1,6 @@
-const QUOTE_API_URL = 'https://api.quotable.io/random?minLength=200&maxLength=300';
+// We've replaced the quotable.io API with the Wikipedia API
+// This fetches the introduction of a random Wikipedia article.
+const WIKIPEDIA_API_URL = 'https://en.wikipedia.org/api/rest_v1/page/random/summary';
 const quoteDisplayElement = document.getElementById('quote-display');
 const quoteInputElement = document.getElementById('quote-input');
 const timerElement = document.getElementById('timer');
@@ -12,15 +14,23 @@ let startTime;
 let errors = 0;
 let totalTypedChars = 0;
 
-// Function to fetch a new quote from the API
+// Function to fetch a new random summary from the Wikipedia API
 async function getRandomQuote() {
     try {
-        const response = await fetch(QUOTE_API_URL);
+        const response = await fetch(WIKIPEDIA_API_URL);
         const data = await response.json();
-        return data.content;
+        // We get the 'extract' which is the summary of the article
+        const passage = data.extract;
+        
+        // Let's make sure the passage is a decent length. If not, try again.
+        if (passage.length < 200) {
+            console.log("Passage too short, fetching another one...");
+            return getRandomQuote(); // Recursive call to get a longer one
+        }
+        return passage;
     } catch (error) {
-        console.error("Error fetching quote:", error);
-        return "An error occurred. Please try again.";
+        console.error("Error fetching quote from Wikipedia:", error);
+        return "An error occurred while fetching a new passage. Please try again.";
     }
 }
 
@@ -129,4 +139,3 @@ restartButton.addEventListener('click', renderNewQuote);
 
 // Initial load
 renderNewQuote();
-
