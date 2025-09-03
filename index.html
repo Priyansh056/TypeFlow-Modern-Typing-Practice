@@ -1,37 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Speed Test 🚀</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Speed Test 🚀</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Typing Speed Test</h1>
-        
-       <div class="stats">
-            <div class="stat-item">
-                <div class="label">Timer</div>
-                <div id="timer" class="value">0</div>
-            </div>
-            <div class="stat-item">
-                <div class="label">WPM</div>
-                <div id="wpm" class="value">0</div>
-            </div>
-            <div class="stat-item">
-                <div class="label">CPM</div>
-                <div id="cpm" class="value">0</div>
-            </div>
-             <div class="stat-item">
-                <div class="label">Accuracy</div>
-                <div id="accuracy" class="value">100</div>
-            </div>
-        </div>
-        <div id="quote-display" class="quote-display"></div>
-        <textarea id="quote-input" class="quote-input" autofocus></textarea>
-        <button id="restart-btn">Restart</button>
+  <header class="header">
+    <div class="logo">TypeFlow 🚀</div>
+    <nav class="nav">
+      <a href="#test">Test</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main class="container" id="test">
+    <h1>Typing Speed Test</h1>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-item"><span class="label">Timer</span><span id="timer" class="value">0</span></div>
+      <div class="stat-item"><span class="label">WPM</span><span id="wpm" class="value">0</span></div>
+      <div class="stat-item"><span class="label">CPM</span><span id="cpm" class="value">0</span></div>
+      <div class="stat-item"><span class="label">Accuracy</span><span id="accuracy" class="value">100%</span></div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Quote & Input -->
+    <div id="quote-display" class="quote-display"></div>
+    <textarea id="quote-input" class="quote-input" placeholder="Start typing here..." autofocus></textarea>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button id="restart-btn">Restart</button>
+      <button id="pause-btn">Pause</button>
+      <button id="darkmode-btn">Dark Mode</button>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+  </main>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <h2>Features ✨</h2>
+    <ul>
+      <li>Real-time WPM, CPM, and accuracy tracking</li>
+      <li>Different difficulty levels</li>
+      <li>Dark mode for comfortable typing</li>
+      <li>Mobile-friendly responsive design</li>
+    </ul>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About 📖</h2>
+    <p>
+      TypeFlow is a modern typing speed test app designed to improve your typing 
+      accuracy and speed. Practice daily and track your progress like a pro!
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 TypeFlow | Built with ❤️ by Priyansh</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
