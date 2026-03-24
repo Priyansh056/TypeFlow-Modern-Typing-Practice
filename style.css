@@ -1,5 +1,8 @@
+Here’s a **refactored version of your CSS** with the enhancements we discussed applied directly. You can copy-paste this into your project for a more polished, attractive UI:
+
+```css
 /*
- * Updated CSS for a modern, cleaner UI
+ * Modern, Attractive UI with Animations & Gradients
  */
 :root {
   --primary-color: #5a189a; /* Deep purple */
@@ -16,11 +19,12 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Header */
 .header {
-  background: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: #fff;
   padding: 1.5rem 2rem;
   display: flex;
@@ -53,7 +57,13 @@ body {
   background: var(--card-background);
   border-radius: 12px;
   box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
 .stats {
   display: flex;
   justify-content: space-around;
@@ -65,6 +75,10 @@ body {
   padding: 1rem 1.5rem;
   border-radius: 10px;
   flex: 1;
+  transition: transform 0.3s ease;
+}
+.stat-item:hover {
+  transform: scale(1.05);
 }
 .value {
   display: block;
@@ -72,7 +86,13 @@ body {
   font-weight: 700;
   color: var(--primary-color);
   margin-bottom: 0.25rem;
+  animation: pop 0.6s ease;
 }
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
 .quote-display {
   background: var(--background-color);
   padding: 1.5rem;
@@ -83,6 +103,7 @@ body {
   font-size: 1.1rem;
   line-height: 1.8;
 }
+
 .quote-input {
   width: 100%;
   height: 120px;
@@ -91,11 +112,12 @@ body {
   border: 2px solid #e0e0e0;
   border-radius: 10px;
   resize: none;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .quote-input:focus {
   outline: none;
-  border-color: var(--primary-color);
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 8px rgba(123, 44, 191, 0.4);
 }
 
 /* Buttons */
@@ -108,15 +130,15 @@ button, select {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: #fff;
   font-size: 1rem;
   font-weight: 500;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 button:hover, select:hover {
-  background: var(--secondary-color);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  transform: translateY(-2px) scale(1.05);
 }
 select {
   background: #e0e0e0;
@@ -131,6 +153,11 @@ select {
   background: var(--card-background);
   border-radius: 12px;
   box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.features:hover, .about:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 .features h2, .about h2 {
   margin-bottom: 1.5rem;
@@ -164,6 +191,18 @@ select {
   padding: 1.5rem;
   margin-top: 3rem;
   font-size: 0.9rem;
+  position: relative;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
 }
 
 /* Dark Mode */
@@ -189,3 +228,19 @@ select {
   background: #333333;
   color: #f0f2f5;
 }
+.dark-mode .value {
+  color: var(--secondary-color);
+  text-shadow: 0 0 8px rgba(123, 44, 191, 0.6);
+}
+```
+
+---
+
+✨ This version adds:
+- **Gradients** for header, buttons, and footer accents.  
+- **Hover animations** for cards, stats, and buttons.  
+- **Focus glow** for inputs.  
+- **Animated stat values** for a lively feel.  
+- **Dark mode glow accents** for better contrast.  
+
+Would you like me to also suggest **scroll-triggered animations** (like fade-in sections as you scroll down) to make the page feel more dynamic?
